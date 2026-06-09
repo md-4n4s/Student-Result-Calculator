@@ -3,9 +3,58 @@
     <head>
         <title>Student Result Calculator</title>
         <link href="index.css" rel="stylesheet"></link>
-        <script src="index.js"></script>
+        <script src="index.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
-        
+        <!-- header -->
+        <header>
+            <h1>Student Result Calculator <i class="fa-solid fa-graduation-cap"></i></h1>
+        </header>
+
+        <!-- student information -->
+         <div class="info-container">
+            <form class="js-student-info">
+                <div class="input-container">
+                    <label for="for-student-name">Student Name:</label>
+                    <input type="text" class="student-name" id="for-student-name" placeholder="e.g. Muhammad Anas">
+                    <p class="js-response validate-name"></p>
+                </div>
+                <div class="input-container">
+                    <label for="for-registration-num">Registration Number:</label>
+                    <input type="text" class="registration-num" id="for-registration-num" placeholder="e.g. f2024376501">
+                    <p class="js-response validate-regNum"></p>
+                </div>
+                <div class="input-container">
+                    <label for="for-semester-num">Semester Number:</label>
+                    <select class="semester-num" id="for-semester-num">
+                        <option>1st</option>
+                        <option>2nd</option>
+                        <option>3rd</option>
+                        <option>4th</option>
+                        <option>5th</option>
+                        <option>6th</option>
+                        <option>7th</option>
+                        <option>8th</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="for-cgpa">CGPA:</label>
+                    <input type="text" id="for-cgpa" class="cgpa" placeholder="e.g. 2.5 (not for students of first semester)">
+                    <p class="js-response validate-cgpa"></p>
+                </div>
+                <div class="input-container">
+                    <label for="for-credit-hours">Earned Credit Hours:</label>
+                    <input type="text" id="for-credit-hours" class="credit-hours" placeholder="e.g. 50 (not for students of first semester)">
+                    <p class="js-response validate-credits"></p>
+                </div>
+                <div class="button-container ">
+                    <button onclick="getStudentInfo(event);">Submit</button>
+                </div>
+            </form>
+         </div>
     </body>
 </html>

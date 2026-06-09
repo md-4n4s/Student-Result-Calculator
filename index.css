@@ -1,4 +1,84 @@
-/* Background: light gray (#F3F4F6)
-Buttons / highlights: blue (#2563EB)
-Cards: white
-Text: dark gray (#111827) */
+/* css for all elements */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* css for whole body */
+body{
+    background-color: #c9bbd3;
+    color: #2B2D42;
+    font-family: Outfit, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* css for header */
+header{
+    text-align: center;
+    margin: 2% 0 4% 0;
+    font-size: 130%;
+}
+
+/* css for student information */
+.info-container{
+    background-color: #2B2D42;
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px black;
+    color: #F7F4F9;
+    box-sizing: border-box;
+    padding: 30px;
+}
+.info-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input-container,.button-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0 0 0;
+    gap: 5px;
+}
+.input-container label{
+    cursor: pointer;
+}
+.input-container input,select,button{
+    font-family: 'Outfit', sans-serif;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #2B2D42;
+    border-radius: 5px;
+    background-color: #F7F4F9;
+    box-shadow: 0px 0px 2px #F7F4F9;
+    color: #2B2D42;
+}
+.input-container option{
+    font-family: 'Outfit', sans-serif;
+    background-color: #F7F4F9;
+    color: #2B2D42;
+}
+.button-container{
+    width: 20%;
+    margin-left: 80%;
+    margin-top: 5%;
+}
+.button-container button{
+    transition: background-color 0.3s, color 0.3s;
+}
+.button-container button:hover{
+    background-color: #2B2D42;
+    color: #F7F4F9;
+}
+.button-container button:active{
+    transform: scale(0.9);
+}
+.js-response{
+    font-size: 10px;
+    text-align: end;
+}
