@@ -32,7 +32,7 @@ header{
     box-sizing: border-box;
     padding: 30px;
 }
-.info-container form{
+.info-container form.js-student-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,17 +68,30 @@ header{
     margin-left: 80%;
     margin-top: 5%;
 }
-.button-container button{
+.info-container button{
     transition: background-color 0.3s, color 0.3s;
 }
-.button-container button:hover{
+.info-container button:hover{
     background-color: #2B2D42;
     color: #F7F4F9;
 }
-.button-container button:active{
+.info-container button:active{
     transform: scale(0.9);
 }
 .js-response{
     font-size: 10px;
     text-align: end;
+    color: red;
+}
+
+/* css for choose functionality */
+.js-choose-buttons{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.js-choose-buttons button{
+    margin: 10px;
+    width: 80%;
 }

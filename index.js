@@ -54,5 +54,8 @@ function getStudentInfo(event) {
         }
     }
 
-    if (valid) document.querySelector('.js-student-info').style.display='none';
+    if (valid) {
+        document.querySelector('.js-student-info').style.display='none';
+        document.querySelector('.js-choose-buttons').style.display='flex';
+    }
 }

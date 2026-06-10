@@ -15,9 +15,12 @@
             <h1>Student Result Calculator <i class="fa-solid fa-graduation-cap"></i></h1>
         </header>
 
-        <!-- student information -->
+        <!-- information -->
          <div class="info-container">
+
+            <!-- student information -->
             <form class="js-student-info">
+                <h2>Student Information</h2>
                 <div class="input-container">
                     <label for="for-student-name">Student Name:</label>
                     <input type="text" class="student-name" id="for-student-name" placeholder="e.g. Muhammad Anas">
@@ -55,6 +58,14 @@
                     <button onclick="getStudentInfo(event);">Submit</button>
                 </div>
             </form>
+
+            <!-- choose functionality -->
+            <form class="js-choose-buttons">
+                <h2>Choose a Calculator</h2>
+                <button>Calculate Grade</button>
+                <button>Calculate SGPA & CGPA</button>
+            </form>
+
          </div>
     </body>
 </html>
