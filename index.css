@@ -14,6 +14,12 @@ body{
     justify-content: center;
     align-items: center;
 }
+h2{
+    border-bottom: 1px solid #F7F4F9;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
 
 /* css for header */
 header{
@@ -94,4 +100,20 @@ header{
 .js-choose-buttons button{
     margin: 10px;
     width: 80%;
+}
+
+/* css for grade calculator */
+.grade-calculator{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* css for gpa calculator */
+.gpa-calculator{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

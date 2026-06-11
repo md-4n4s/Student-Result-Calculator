@@ -59,3 +59,17 @@ function getStudentInfo(event) {
         document.querySelector('.js-choose-buttons').style.display='flex';
     }
 }
+
+//function to display Grade Calculator
+function showGradeCalculator(event){
+    event.preventDefault();
+    document.querySelector('.js-choose-buttons').style.display='none';
+    document.querySelector('.grade-calculator').style.display='flex';
+}
+
+// function to display GPA Calculator
+function showGPACalculator(event){
+    event.preventDefault();
+    document.querySelector('.js-choose-buttons').style.display='none';
+    document.querySelector('.gpa-calculator').style.display='flex';
+}
