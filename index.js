@@ -17,18 +17,9 @@ function getStudentInfo(event) {
         document.querySelector('.validate-name').innerHTML = "Student Name is mandatory.";
         valid = false;
     }
-    else if (/\d/.test(studentName)) {
-        document.querySelector('.validate-name').innerHTML = "Student Name can't have numbers.";
-        valid = false;
-    }
 
-    let firstChar = registrationNumber[0]?.toLowerCase();
     if (registrationNumber === "") {
         document.querySelector('.validate-regNum').innerHTML = "Registration Number is mandatory.";
-        valid = false;
-    }
-    else if (registrationNumber.length !== 11 || (firstChar !== 's' && firstChar !== 'f')) {
-        document.querySelector('.validate-regNum').innerHTML = "Invalid Registration Number.";
         valid = false;
     }
 
@@ -55,21 +46,19 @@ function getStudentInfo(event) {
     }
 
     if (valid) {
-        document.querySelector('.js-student-info').style.display='none';
-        document.querySelector('.js-choose-buttons').style.display='flex';
+        switchSection(event, '.js-choose-buttons');
     }
 }
 
-//function to display Grade Calculator
-function showGradeCalculator(event){
+//function to switch page
+function switchSection(event, sectionToShow) {
     event.preventDefault();
-    document.querySelector('.js-choose-buttons').style.display='none';
-    document.querySelector('.grade-calculator').style.display='flex';
-}
 
-// function to display GPA Calculator
-function showGPACalculator(event){
-    event.preventDefault();
-    document.querySelector('.js-choose-buttons').style.display='none';
-    document.querySelector('.gpa-calculator').style.display='flex';
+    document.querySelectorAll(
+        '.js-student-info, .js-choose-buttons, .grade-calculator, .gpa-calculator'
+    ).forEach(section => {
+        section.style.display = 'none';
+    });
+
+    document.querySelector(sectionToShow).style.display = 'flex';
 }

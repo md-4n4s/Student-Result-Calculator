@@ -61,18 +61,21 @@
 
             <!-- choose functionality -->
             <form class="js-choose-buttons">
+                <p class="go-back-icon" onclick="switchSection(event,'.js-student-info');">&larr; Back</p>
                 <h2>Choose a Calculator</h2>
-                <button onclick="showGradeCalculator(event);">Calculate Grade</button>
-                <button onclick="showGPACalculator(event);">Calculate SGPA & CGPA</button>
+                <button onclick="switchSection(event,'.grade-calculator');">Calculate Grade</button>
+                <button onclick="switchSection(event,'.gpa-calculator');">Calculate SGPA & CGPA</button>
             </form>
 
             <!-- Grade Calculator -->
              <form class="grade-calculator">
+                <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>Grade Calculator</h2>
              </form>
 
             <!-- GPA calculator -->
              <form class="gpa-calculator">
+                <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>GPA Calculator</h2>
              </form>
          </div>
