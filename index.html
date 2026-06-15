@@ -71,12 +71,73 @@
              <form class="grade-calculator">
                 <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>Grade Calculator</h2>
+                <div class="highest-marks-container input-container">
+                    <label for="highest-marks">Highest Marks</label>
+                    <input type="text" placeholder="e.g. 80" id="highest-marks">
+                </div>
+                <div class="form-per-assessment">
+                    <h5>Asessment</h5>
+                    <h5>Total</h5>
+                    <h5>Obtained</h5>
+                    <h5>Weightage</h5>
+                </div>
+                <div class="form-per-assessment input-container">
+                    <input type="text" placeholder="e.g. Quiz" class="assessment-quiz">
+                    <input type="text" placeholder="e.g. 30" class="assessment-total">
+                    <input type="text" placeholder="e.g. 20" class="assessment-obtained">
+                    <input type="text" placeholder="e.g. 10" class="assessment-weightage">
+                </div>
+                <div class="add-assessment">
+                    <button>Add More Assessments</button>
+                </div>
+                <div class="calculated-marks">
+                    <h5>Total:100</h5>
+                    <h5>Obtained:</h5>
+                </div>
+                <div class="get-grade-button">
+                    <button>Get Grade</button>
+                </div>
              </form>
 
             <!-- GPA calculator -->
              <form class="gpa-calculator">
                 <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>GPA Calculator</h2>
+                <div class="form-per-subject">
+                    <h5>Subject</h5>
+                    <h5>Grade</h5>
+                    <h5>Credits</h5>
+                    <h5>Confirm</h5>
+                </div>
+                <div class="form-per-subject input-container">
+                    <input type="text" placeholder="e.g. Web Technologies" class="subject-name">
+                    <select id="grade-earned">
+                        <option>A</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B</option>
+                        <option>B-</option>
+                        <option>C+</option>
+                        <option>C</option>
+                        <option>C-</option>
+                    </select>
+                    <select id="subject-credit-hours">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <button>Add</button>
+                </div>
+                <div class="add-subject">
+                    <button>Add More Subjects</button>
+                </div>
+                <div class="calculated-gpa">
+                    <h5>SGPA:</h5>
+                    <h5>CGPA:</h5>
+                </div>
+                <div class="get-result-button">
+                    <button>Generate Result</button>
+                </div>
              </form>
          </div>
     </body>

@@ -120,6 +120,29 @@ p.go-back-icon:active{
     justify-content: center;
     align-items: center;
 }
+.highest-marks-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+.form-per-assessment{
+    margin-top: 10px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 40% 20% 20% 20%;
+    gap: 5px;
+}
+.add-assessment, .get-grade-button{
+    margin-top: 20px;
+}
+.calculated-marks{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
 
 /* css for gpa calculator */
 .gpa-calculator{
@@ -127,4 +150,20 @@ p.go-back-icon:active{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.form-per-subject{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 15% 15% 20%;
+    gap: 5px;
+    margin-top: 10px;
+}
+.calculated-gpa{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+.get-result-button, .add-subject{
+    margin-top: 20px;
 }
