@@ -68,7 +68,7 @@
             </form>
 
             <!-- Grade Calculator -->
-             <form class="grade-calculator">
+            <form class="grade-calculator">
                 <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>Grade Calculator</h2>
                 <div class="highest-marks-container input-container">
@@ -91,16 +91,15 @@
                     <button>Add More Assessments</button>
                 </div>
                 <div class="calculated-marks">
-                    <h5>Total:100</h5>
-                    <h5>Obtained:</h5>
+                    <h5>Note: This is based on relative grading.</h5>
                 </div>
                 <div class="get-grade-button">
                     <button>Get Grade</button>
                 </div>
-             </form>
+            </form>
 
             <!-- GPA calculator -->
-             <form class="gpa-calculator">
+            <form class="gpa-calculator">
                 <p class="go-back-icon" onclick="switchSection(event,'.js-choose-buttons');">&larr; Back</p>
                 <h2>GPA Calculator</h2>
                 <div class="form-per-subject">
@@ -109,36 +108,69 @@
                     <h5>Credits</h5>
                     <h5>Confirm</h5>
                 </div>
-                <div class="form-per-subject input-container">
-                    <input type="text" placeholder="e.g. Web Technologies" class="subject-name">
-                    <select id="grade-earned">
-                        <option>A</option>
-                        <option>A-</option>
-                        <option>B+</option>
-                        <option>B</option>
-                        <option>B-</option>
-                        <option>C+</option>
-                        <option>C</option>
-                        <option>C-</option>
-                    </select>
-                    <select id="subject-credit-hours">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                    <button>Add</button>
+                <div class="form-per-subject-container">
+                    <div class="form-per-subject input-container">
+                        <input type="text" placeholder="e.g. Web Technologies" class="subject-name">
+                        <select class="grade-earned">
+                            <option>A</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B</option>
+                            <option>B-</option>
+                            <option>C+</option>
+                            <option>C</option>
+                            <option>C-</option>
+                        </select>
+                        <select class="subject-credit-hours">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                        <button type="button" onclick="updateGPA(event,this);" class="js-update-gpa">Add</button>
+                    </div>
                 </div>
                 <div class="add-subject">
-                    <button>Add More Subjects</button>
+                    <button onclick="addMoreSubjects(event);">Add More Subjects</button>
                 </div>
-                <div class="calculated-gpa">
-                    <h5>SGPA:</h5>
-                    <h5>CGPA:</h5>
-                </div>
+                <div class="calculated-gpa"></div>
                 <div class="get-result-button">
-                    <button>Generate Result</button>
+                    <button onclick="generateResult(event);">Generate Result</button>
                 </div>
-             </form>
+                <p class="js-response validate-subject-name"></p>
+            </form>
+
+            <!-- Generated result -->
+            <div class="generated-result-container">
+                <div class="generated-result">
+                    <h1>Result</h1>
+                    <div class="result-student-info">
+                        <p><b>Name:</b> M. Anas</p>
+                        <p><b>Reg Number:</b> f2024376501</p>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Subject Name</th>
+                            <th>Grade</th>
+                        </tr>
+                        <tr>
+                            <td>PF</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>COAL</td>
+                            <td>B</td>
+                        </tr>
+                    </table>
+                    <div class="js-calculated-gpa">
+                        <p><b>SGPA:</b>3.8</p>
+                        <p><b>CGPA:</b>3.7</p>
+                    </div>
+                    <div class="download-button-container">
+                        <button class="download-button">Download</button>
+                    </div>
+                </div>
+            </div>
+
          </div>
     </body>
 </html>

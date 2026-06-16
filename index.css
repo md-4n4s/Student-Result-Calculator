@@ -20,7 +20,25 @@ h2{
     text-align: center;
     padding-bottom: 10px;
 }
+h1{
+    text-align: center;
+}
+table{
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    border: 2px solid black;
+    border-collapse: collapse;
 
+}
+tr,th,td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+}
+th{
+    border: 2px solid black;
+}
 
 /* css for header */
 header{
@@ -151,6 +169,11 @@ p.go-back-icon:active{
     justify-content: center;
     align-items: center;
 }
+.form-per-subject-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .form-per-subject{
     display: grid;
     width: 100%;
@@ -160,10 +183,46 @@ p.go-back-icon:active{
 }
 .calculated-gpa{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     width: 100%;
     margin-top: 20px;
 }
 .get-result-button, .add-subject{
+    margin-top: 20px;
+}
+.validate-subject-name{
+    margin-top: 20px;
+    display: flex;
+}
+
+/* Generated Result */
+.generated-result-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    top:0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(255,255,255,0.6);
+}
+.generated-result{
+    background-color: white;
+    padding: 50px;
+    color: black;
+    width: 35%;
+}
+.result-student-info{
+    margin-top:10px;
+}
+.js-calculated-gpa{
+    display: none;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.download-button-container{
+    display: flex;
+    justify-content: end;
     margin-top: 20px;
 }
