@@ -44,7 +44,7 @@ function getStudentInfo(event) {
     }
 
     if (semesterNumber !== '1st') {
-        if (cgpa === "") {
+        if (cgpa === 0) {
             document.querySelector('.validate-cgpa').innerHTML = "CGPA is mandatory.";
             valid = false;
         }
@@ -55,7 +55,7 @@ function getStudentInfo(event) {
     }
 
     if (semesterNumber !== '1st') {
-        if (creditHours === "") {
+        if (creditHours === 0) {
             document.querySelector('.validate-credits').innerHTML = "Credit Hours is mandatory.";
             valid = false;
         }
@@ -70,7 +70,7 @@ function getStudentInfo(event) {
     }
 
     if (semesterNumber === '1st'){
-        cgpa=0.0;
+        cgpa=0;
         creditHours=0;
     }
 
@@ -207,15 +207,69 @@ function updateGPA(event, current) {
 function generateResult(event){
     event.preventDefault();
     document.querySelector('.generated-result-container').style.display='flex';
+    showStudentInfo();
+    showSubjectsInfo();
+    showGPAInfo();
 }
 
-//function to show tudent info on generated result
+//function to hide generated result
+function hideResult(event){
+    event.preventDefault();
+    document.querySelector('.generated-result-container').style.display='none';
+}
+
+//function to show student info on generated result
 function showStudentInfo(){
     document.querySelector('.result-student-info').innerHTML=`
         <p><b>Name:</b> ${studentName}</p>
         <p><b>Reg Number:</b> ${registrationNumber}</p>
     `;
 }
+function showSubjectsInfo(){
+    let object=``;
+    for (let i=0;i<subjectsInfo.length;i++){
+        object+=`
+            <tr>
+                <td>${subjectsInfo[i].Subject}</td>
+                <td>${subjectsInfo[i].Grade}</td>
+            </tr>
+        `;
+    }
+    document.querySelector(".display-added-subjects").innerHTML=object;
+}
+function showGPAInfo(){
+    cgpa=((cgpa*creditHours)+(sgpa*thisSemesterCreditHours))/(creditHours+thisSemesterCreditHours);
+    document.querySelector(".js-calculated-gpa").innerHTML=`
+        <p><b>SGPA:</b> ${sgpa.toFixed(2)}</p>
+        <p><b>CGPA:</b> ${cgpa.toFixed(2)}</p>
+    `;
+    console.log(cgpa, creditHours, sgpa, thisSemesterCreditHours);
+}
+
+//function to download result
+async function downloadPDF() {
+    const result = document.querySelector(".generated-result");
+    const downloadBtn = document.querySelector(".download-button-container");
+    downloadBtn.style.display = "none";
+    const crossBtn = document.querySelector(".back-from-result");
+    crossBtn.style.display = "none";
+
+    const canvas = await html2canvas(result, {
+        scale: 2
+    });
+
+    downloadBtn.style.display = "flex";
+    crossBtn.style.display = "block";
+    const imgData = canvas.toDataURL("image/png");
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = (canvas.height * pageWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pageHeight);
+    pdf.save("Student-Result.pdf");
+}   
 
 showGPA();
-showStudentInfo();

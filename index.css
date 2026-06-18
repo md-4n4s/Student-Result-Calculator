@@ -196,6 +196,10 @@ p.go-back-icon:active{
 }
 
 /* Generated Result */
+.back-from-result{
+    text-align: end;
+    cursor: pointer;
+}
 .generated-result-container{
     display: none;
     justify-content: center;
@@ -217,7 +221,7 @@ p.go-back-icon:active{
     margin-top:10px;
 }
 .js-calculated-gpa{
-    display: none;
+    display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
