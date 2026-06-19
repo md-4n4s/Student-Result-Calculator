@@ -66,7 +66,7 @@ function getStudentInfo(event) {
     }
 
     if (valid) {
-        switchSection(event, '.js-choose-buttons');
+        switchSection(event, '.gpa-calculator');
     }
 
     if (semesterNumber === '1st'){
@@ -82,7 +82,7 @@ function switchSection(event, sectionToShow) {
     event.preventDefault();
 
     document.querySelectorAll(
-        '.js-student-info, .js-choose-buttons, .grade-calculator, .gpa-calculator'
+        '.js-student-info, .gpa-calculator'
     ).forEach(section => {
         section.style.display = 'none';
     });
@@ -117,23 +117,6 @@ function addMoreSubjects(event){
             <button type="button" onclick="updateGPA(event,this);" class="js-update-gpa">Add</button>
     `;
     container.appendChild(div);
-}
-
-//function to calculate grade points
-function calculateGradePoints(gradePoints, grade, subjectCreditHours,condition="Add") {
-    const gradePointsByGrade = {
-        "A": 4.00,
-        "A-": 3.67,
-        "B+": 3.33,
-        "B": 3.00,
-        "B-": 2.67,
-        "C+": 2.33,
-        "C": 2.00,
-        "C-": 1.67
-    };
-
-    if (condition==="Add") return gradePoints + (gradePointsByGrade[grade] * Number(subjectCreditHours));
-    else return gradePoints - (gradePointsByGrade[grade] * Number(subjectCreditHours));
 }
 
 //function to update GPA
@@ -243,7 +226,6 @@ function showGPAInfo(){
         <p><b>SGPA:</b> ${sgpa.toFixed(2)}</p>
         <p><b>CGPA:</b> ${cgpa.toFixed(2)}</p>
     `;
-    console.log(cgpa, creditHours, sgpa, thisSemesterCreditHours);
 }
 
 //function to download result

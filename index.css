@@ -109,59 +109,6 @@ header{
     color: red;
 }
 
-/* css for choose functionality */
-.js-choose-buttons{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.js-choose-buttons button{
-    margin: 10px;
-    width: 80%;
-}
-.go-back-icon{
-    text-decoration: none;
-    color: #F7F4F9;
-    justify-content: left;
-    margin-right: 85%;
-    cursor: pointer;
-}
-p.go-back-icon:active{
-    font-size: 80%;
-}
-
-/* css for grade calculator */
-.grade-calculator{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.highest-marks-container{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-}
-.form-per-assessment{
-    margin-top: 10px;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 40% 20% 20% 20%;
-    gap: 5px;
-}
-.add-assessment, .get-grade-button{
-    margin-top: 20px;
-}
-.calculated-marks{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-}
-
 /* css for gpa calculator */
 .gpa-calculator{
     display: none;
@@ -229,4 +176,8 @@ p.go-back-icon:active{
     display: flex;
     justify-content: end;
     margin-top: 20px;
+}
+.go-back-icon{
+    cursor: pointer;
+    margin-right:85%;
 }
