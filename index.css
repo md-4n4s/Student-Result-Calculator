@@ -50,7 +50,7 @@ header{
 /* css for student information */
 .info-container{
     background-color: #2B2D42;
-    width: 30%;
+    width: 480px;
     border-radius: 20px;
     box-shadow: 5px 5px 15px black;
     color: #F7F4F9;
@@ -180,4 +180,16 @@ header{
 .go-back-icon{
     cursor: pointer;
     margin-right:85%;
+}
+
+/* Responsive  */
+@media  (max-width:500px){
+    .info-container{
+        height: 100%;
+        width: 100%;
+    }
+    .generated-result{
+        width: 100%;
+        height: 100%;
+    }
 }
